@@ -1,0 +1,58 @@
+# терминал
+super + Return
+	kitty
+
+# проводник
+super + e
+	nemo
+
+# firefox
+super + f
+	firefox
+
+# закрытие окна
+alt + q
+	bspc node -c
+
+# перезапуск bspwm
+super + alt + r
+	bspc wm -r
+
+#  рабочие столы
+super + {1-6}
+	bspc desktop -f '^{1-6}'
+
+super + v
+	code
+
+alt + Tab
+    bspc node -f next.local.!hidden.window
+
+alt + shift + Tab
+    bspc node -f prev.local.!hidden.window
+
+super + d
+    rofi -show drun
+
+# изменение размера окна в фокусе
+# alt + h/l: уже / шире, alt + j/k: выше / ниже
+alt + h
+	bspc node -z right -20 0 || bspc node -z left -20 0
+
+alt + l
+	bspc node -z right 20 0 || bspc node -z left 20 0
+
+alt + j
+	bspc node -z bottom 0 20 || bspc node -z top 0 20
+
+alt + k
+	bspc node -z bottom 0 -20 || bspc node -z top 0 -20
+
+# поменять местами окно в фокусе с соседним
+# alt + shift + h/j/k/l
+alt + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east} --follow
+
+# Screenshot selected area to clipboard
+super + shift + s
+    maim -s | xclip -selection clipboard -t image/png
