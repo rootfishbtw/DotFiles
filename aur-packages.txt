@@ -1,0 +1,6 @@
+nvidia-470xx-dkms
+nvidia-470xx-utils
+picom-ftlabs-git
+picom-ftlabs-git-debug
+yay
+yay-debug
